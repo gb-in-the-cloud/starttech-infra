@@ -57,15 +57,6 @@ module "storage" {
     versioning_enabled   = var.storage.versioning_enabled
 }
 
-module "storage" {
-    source = "./modules/storage"
-
-    project_name         = var.project_name
-    environment          = var.environment
-    bucket_name          = var.storage.bucket_name
-    versioning_enabled   = var.storage.versioning_enabled
-}
-
 module "cdn" {
     source = "./modules/cdn"
 
