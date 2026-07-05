@@ -24,6 +24,6 @@ variable "private_subnet_cidrs" {
 }
 
 variable "availability_zones" {
-  description = "List of availability zones to deploy subnets into"
+  description = "Availability zones for subnets"
   type        = list(string)
 }
