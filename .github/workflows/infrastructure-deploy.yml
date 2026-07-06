@@ -24,6 +24,10 @@ on:
           - plan
           - apply
           - destroy
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
 
 # Prevent concurrent deployments
 concurrency:
