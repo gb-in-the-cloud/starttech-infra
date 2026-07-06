@@ -25,7 +25,7 @@ output "eks_cluster_endpoint" {
 
 output "s3_bucket_name" {
   description = "S3 Bucket Name"
-  value       = module.storage.bucket_id
+  value       = module.storage.s3_bucket_id
 }
 
 output "cloudfront_domain" {
