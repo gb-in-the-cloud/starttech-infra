@@ -19,6 +19,8 @@ on:
         default: 'plan'
         type: choice
         options:
+          - init
+          - validate
           - plan
           - apply
           - destroy
