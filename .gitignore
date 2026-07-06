@@ -1,0 +1,23 @@
+# Terraform
+terraform.tfvars
+*.tfstate
+*.tfstate.backup
+.terraform/
+tfplan
+*.log
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Keys
+*.pem
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

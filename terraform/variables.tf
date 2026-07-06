@@ -72,7 +72,7 @@ variable "eks_node_min_size" {
 }
 
 #----Storage----#
-variable "storage_bucket_name" {
+variable "s3_bucket_name" {
   description = "The name of the S3 bucket."
   type        = string
   default     = "starttech-infra-bucket"

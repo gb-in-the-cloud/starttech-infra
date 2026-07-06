@@ -1,6 +1,12 @@
 terraform {
   required_version = ">=1.6.0"
 
+  backend "s3" {
+    bucket = var.s3_bucket_name
+    key    = "starttech/terraform.tfstate"
+    region = "eu-west-1"
+  }
+
   required_providers {
     aws = {
         source  = "hashicorp/aws"
@@ -38,14 +44,12 @@ module "eks" {
     project_name         = var.project_name
     environment          = var.environment
     vpc_id               = module.networking.vpc_id
-    public_subnet_ids    = module.networking.public_subnet_ids
     private_subnet_ids   = module.networking.private_subnet_ids
-    cluster_name         = var.eks.cluster_name
-    cluster_version      = var.eks.cluster_version
-    node_instance_type   = var.eks.node_instance_type
-    node_desired_size    = var.eks.node_desired_size
-    node_min_size        = var.eks.node_min_size
-    node_max_size        = var.eks.node_max_size
+    cluster_version      = var.eks_cluster_version
+    node_instance_type   = var.eks_node_instance_type
+    node_desired_size    = var.eks_node_desired_size
+    node_min_size        = var.eks_node_min_size
+    node_max_size        = var.eks_node_max_size
 }
 
 module "storage" {
@@ -53,8 +57,7 @@ module "storage" {
 
     project_name         = var.project_name
     environment          = var.environment
-    bucket_name          = var.storage.bucket_name
-    versioning_enabled   = var.storage.versioning_enabled
+    s3_bucket_name       = var.s3_bucket_name
 }
 
 module "cdn" {
@@ -62,9 +65,9 @@ module "cdn" {
 
     project_name         = var.project_name
     environment          = var.environment
-    bucket_id            = module.storage.bucket_id 
-    bucket_arn           = module.storage.bucket_arn
-    bucket_domain        = module.storage.bucket_domain
+    s3_bucket_id         = module.storage.s3_bucket_id
+    s3_bucket_arn        = module.storage.s3_bucket_arn
+    s3_bucket_domain     = module.storage.s3_bucket_domain
     alb_dns_name         = module.eks.alb_dns_name
 }
 
@@ -75,6 +78,6 @@ module "database" {
     environment                = var.environment
     private_subnet_ids         = module.networking.private_subnet_ids
     vpc_id                     = module.networking.vpc_id
-    eks_node_security_group_id = module.eks.node_security_group_id
-    redis_node_type            = var.database.redis_node_type
+    eks_node_security_group    = module.eks.node_security_group_id
+    redis_node_type            = var.redis_node_type
 }
