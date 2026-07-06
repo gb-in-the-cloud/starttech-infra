@@ -26,4 +26,5 @@ variable "s3_bucket_domain" {
 variable "alb_dns_name" {
   description = "DNS name of the Application Load Balancer"
   type        = string
+  default     = "placeholder.example.com"
 }

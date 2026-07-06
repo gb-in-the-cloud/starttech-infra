@@ -68,7 +68,7 @@ module "cdn" {
   s3_bucket_id     = module.storage.s3_bucket_id
   s3_bucket_arn    = module.storage.s3_bucket_arn
   s3_bucket_domain = module.storage.s3_bucket_domain
-  alb_dns_name     = module.eks.alb_dns_name
+  alb_dns_name     = var.alb_dns_name
 }
 
 module "database" {

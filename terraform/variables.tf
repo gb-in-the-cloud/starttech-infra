@@ -84,3 +84,9 @@ variable "redis_node_type" {
   type        = string
   default     = "cache.t3.micro"
 }
+
+variable "alb_dns_name" {
+  description = "ALB DNS name — empty on phase 1, set on phase 2"
+  type        = string
+  default     = "placeholder.example.com"
+}
