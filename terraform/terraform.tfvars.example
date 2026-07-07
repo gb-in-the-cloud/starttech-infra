@@ -19,4 +19,4 @@ eks_node_max_size      = 4
 redis_node_type = "cache.t3.micro"
 
 #---Storage----#
-bucket_name = "starttech-frontend-gb-2026"
+bucket_name = "starttech-frontend-bucket-gb-2026"

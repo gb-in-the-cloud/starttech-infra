@@ -1,6 +1,6 @@
 # ─── EKS Cluster IAM Role ─────────────────────────────────────────────────────
 resource "aws_iam_role" "eks_cluster" {
-  name = "${var.project_name}-eks-cluster-role"
+  name = "${var.project_name}cluster"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -14,7 +14,7 @@ resource "aws_iam_role" "eks_cluster" {
   })
 
   tags = {
-    Name        = "${var.project_name}-eks-cluster-role"
+    Name        = "${var.project_name}cluster"
     Environment = var.environment
   }
 }
@@ -26,7 +26,7 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_policy" {
 
 # ─── EKS Node Group IAM Role ──────────────────────────────────────────────────
 resource "aws_iam_role" "eks_node_group" {
-  name = "${var.project_name}-eks-node-role"
+  name = "${var.project_name}-node-group"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -40,7 +40,7 @@ resource "aws_iam_role" "eks_node_group" {
   })
 
   tags = {
-    Name        = "${var.project_name}-eks-node-role"
+    Name        = "${var.project_name}-node-group"
     Environment = var.environment
   }
 }
@@ -136,8 +136,8 @@ resource "aws_security_group_rule" "cluster_ingress_nodes" {
 }
 
 # ─── EKS Cluster ─────────────────────────────────────────────────────────────
-resource "aws_eks_cluster" "main" {
-  name     = "${var.project_name}-eks-cluster"
+resource "aws_cluster" "main" {
+  name     = "${var.project_name}-cluster"
   version  = var.cluster_version
   role_arn = aws_iam_role.eks_cluster.arn
 
@@ -157,7 +157,7 @@ resource "aws_eks_cluster" "main" {
   ]
 
   tags = {
-    Name        = "${var.project_name}-eks-cluster"
+    Name        = "${var.project_name}-cluster"
     Environment = var.environment
   }
 }

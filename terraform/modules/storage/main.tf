@@ -49,7 +49,7 @@ resource "aws_s3_bucket_ownership_controls" "frontend" {
 
 # ─── ECR Repository ───────────────────────────────────────────────────────────
 resource "aws_ecr_repository" "app" {
-  name                 = "${var.project_name}-app"
+  name                 = "${var.project_name}-backend-api"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
