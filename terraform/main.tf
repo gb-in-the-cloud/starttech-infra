@@ -2,7 +2,7 @@ terraform {
   required_version = ">=1.6.0"
 
   backend "s3" {
-    bucket = "starttech-tfstate-gb-2026"
+    bucket = "starttech-tfstate-paris-2026"
     key    = "starttech/terraform.tfstate"
     region = "eu-west-3"
   }
