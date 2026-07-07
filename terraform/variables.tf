@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "The AWS region to deploy resources in."
   type        = string
-  default     = "eu-west-1"
+  default     = "eu-west-3"
 }
 
 variable "project_name" {
@@ -13,7 +13,7 @@ variable "project_name" {
 variable "environment" {
   description = "The environment for the deployment (e.g., dev, staging, prod)."
   type        = string
-  default     = "dev"
+  default     = "prod"
 }
 
 variable "vpc_cidr" {
@@ -37,7 +37,7 @@ variable "private_subnet_cidrs" {
 variable "availability_zones" {
   description = "Availability zones"
   type        = list(string)
-  default     = ["eu-west-1a", "eu-west-1b"]
+  default     = ["eu-west-3a", "eu-west-3b"]
 }
 
 #----EKS----#

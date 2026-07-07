@@ -19,7 +19,7 @@ TF_DIR="$(cd "$SCRIPT_DIR/../terraform" && pwd)"
 LOG_FILE="$ROOT_DIR/deploy-$(date +%Y%m%d-%H%M%S).log"
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-AWS_REGION="${AWS_REGION:-eu-west-1}"
+AWS_REGION="${AWS_REGION:-eu-west-3}"
 CLUSTER_NAME="${CLUSTER_NAME:-starttech-cluster}"
 
 # ─── Colors ───────────────────────────────────────────────────────────────────

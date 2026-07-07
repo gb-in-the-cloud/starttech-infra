@@ -4,7 +4,7 @@ terraform {
   backend "s3" {
     bucket = "starttech-tfstate-gb-2026"
     key    = "starttech/terraform.tfstate"
-    region = "eu-west-1"
+    region = "eu-west-3"
   }
 
   required_providers {

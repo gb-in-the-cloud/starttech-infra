@@ -14,7 +14,7 @@ resource "aws_iam_role" "eks_cluster" {
   })
 
   tags = {
-    Name        = "${var.project_name}cluster"
+    Name        = "${var.project_name}-cluster"
     Environment = var.environment
   }
 }
@@ -136,7 +136,7 @@ resource "aws_security_group_rule" "cluster_ingress_nodes" {
 }
 
 # ─── EKS Cluster ─────────────────────────────────────────────────────────────
-resource "aws_cluster" "main" {
+resource "aws_eks_cluster" "main" {
   name     = "${var.project_name}-cluster"
   version  = var.cluster_version
   role_arn = aws_iam_role.eks_cluster.arn
