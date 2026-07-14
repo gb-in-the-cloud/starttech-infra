@@ -196,7 +196,7 @@ jobs:
     environment: Production
     if: |
       (github.ref == 'refs/heads/main' && github.event_name == 'push') ||
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'apply')
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'workflow_dispatch')
     defaults:
       run:
         working-directory: ${{ env.WORKING_DIR }}
