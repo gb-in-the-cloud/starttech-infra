@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GraderReadOnlyS3",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:ListBucket"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GraderReadOnlyCloudFront",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:ListDistributions",
+        "cloudfront:GetDistributionConfig"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GraderReadOnlyEKS",
+      "Effect": "Allow",
+      "Action": [
+        "eks:DescribeCluster",
+        "eks:ListNodegroups",
+        "eks:DescribeNodegroup"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GraderReadOnlyElastiCache",
+      "Effect": "Allow",
+      "Action": [
+        "elasticache:DescribeCacheClusters"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

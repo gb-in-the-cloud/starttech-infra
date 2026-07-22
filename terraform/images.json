@@ -1,0 +1,37 @@
+[
+    {
+        "imageDigest": "sha256:c41321ee713dad431a32e4d9817d42723a40b69f1c203c05542d2684d02d9b3b"
+    },
+    {
+        "imageDigest": "sha256:39856c843275472e33f106d72d674d36853db9c93d29f846717dd5cb9c0617db",
+        "imageTag": "6d0db3ba8e936cafc0f038c9ddc693fb6fa850cf"
+    },
+    {
+        "imageDigest": "sha256:f8d5b21341453dcd06449c9b250f64cdde30c071da7512f524b1f8e3792bf575",
+        "imageTag": "a0555465b049ce17faaff0877f69949b9a0af067"
+    },
+    {
+        "imageDigest": "sha256:8ddc9c595a9354bd07ed04b6466aa75c24a99ae9c2ebd5f03136aa90b4924211",
+        "imageTag": "b970a4c84a1f9f8b65b39563402b8ace55b3927e"
+    },
+    {
+        "imageDigest": "sha256:efd657f9cbbe3b08caba4711a6b5b6b6e9364fab6543c80b84b9258642782307",
+        "imageTag": "ab2fba16c0f229968ca54ef5a8aa6f23b45a5a80"
+    },
+    {
+        "imageDigest": "sha256:6a6f81adc771d4ea7621e4a06c3667e1e0a443f4d7cb287b5d222516b8970f6a",
+        "imageTag": "latest"
+    },
+    {
+        "imageDigest": "sha256:6a6f81adc771d4ea7621e4a06c3667e1e0a443f4d7cb287b5d222516b8970f6a",
+        "imageTag": "69256d515daf9dd3381c1b5f0b77214942a3b382"
+    },
+    {
+        "imageDigest": "sha256:75e06506a633f60372885f2f7ae4811360e0d8781ad59c84646c1d178d1e41ea",
+        "imageTag": "7bd472f1e3fbc1b89b4cf884909b16e26985ef9d"
+    },
+    {
+        "imageDigest": "sha256:2736de7b49f1c3d829f9560d25b03079ebeb0138b2cb61ef5a5a2eb56c83b061",
+        "imageTag": "f18dfb9306cf3b65b9fc8166066606c47010055e"
+    }
+]
